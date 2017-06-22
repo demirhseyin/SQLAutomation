@@ -34,7 +34,7 @@ WHILE @@FETCH_STATUS = 0
 BEGIN   
        SET @fileName = @path + @name +'_'+@month+'_'+@day+'_'+@hour+'_'+@minute  + '.TRN'  
 
-       BACKUP LOG @name TO DISK = @fileName WITH STATS = 1,COMPRESSION,CHECKSUM,INIT
+       BACKUP LOG @name TO DISK = @fileName WITH STATS = 1,COMPRESSION,INIT
 
        FETCH NEXT FROM db_cursor INTO @name   
 END   
