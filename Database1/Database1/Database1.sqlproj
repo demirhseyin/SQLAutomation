@@ -58,4 +58,8 @@
   <ItemGroup>
     <Folder Include="Properties" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Backup.sql" />
+    <Build Include="LogBackup.sql" />
+  </ItemGroup>
 </Project>
