@@ -22,7 +22,7 @@ FETCH NEXT FROM db_cursor INTO @name
 WHILE @@FETCH_STATUS = 0   
 BEGIN   
        SET @fileName = @path + @name + '.BAK'  
-       BACKUP DATABASE @name TO DISK = @fileName WITH STATS = 1,COMPRESSION,INIT
+       BACKUP DATABASE @name TO DISK = @fileName WITH STATS = 1,COMPRESSION,CHECKSUM,INIT
 
        FETCH NEXT FROM db_cursor INTO @name   
 END   
