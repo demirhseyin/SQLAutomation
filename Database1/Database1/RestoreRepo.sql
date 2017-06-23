@@ -9,7 +9,7 @@ GO
 USE [master]
 --Get The Logical Names of Database Files
 RESTORE FILELISTONLY FROM DISK='Location of Backup'
---Restore The Database
+--Restore The Database Via The Logical Names
 RESTORE DATABASE [Database_Name] FROM  DISK = N'Location of Backup' WITH  FILE = 1,  
 MOVE N'NameGenerator' TO N'Location of The New .MDF File',  
 MOVE N'NameGenerator_log' TO N'Location of The New .LDF File',  NOUNLOAD,  STATS = 5
