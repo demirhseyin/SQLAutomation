@@ -1,8 +1,8 @@
 ﻿--Log Backup Procedure Execution
 
-exec dbo.LogBackup @path ='C:\DBA\PF-00ZPPV'
+exec dbo.LogBackup @path =--Path Information
 
 --Full Backup Procedure Execution
 
-exec dbo.BackupALL @path ='X:\DBA_BACKUP\ONEADMIN\ONEADMIN'
+exec dbo.BackupALL @path =--Path Information
 
