@@ -14,7 +14,7 @@ GO
    --Log Backup Variables
 DECLARE @LogBPath nvarchar(50)='Directory' --Log Backup Directory
 DECLARE @backupFile NVARCHAR(500) --Log Backup Name
-DECLARE @DB nvarchar(10) = 'DatabaseName' --Database Name(Duplicate)
+DECLARE @DB nvarchar(10) = 'DatabaseName' --Database Name
    --Read All Log Backup File Names in a Directory
 DECLARE @FindFile TABLE
  (FileNames nvarchar(500)
