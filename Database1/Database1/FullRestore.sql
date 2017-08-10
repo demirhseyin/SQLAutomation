@@ -36,3 +36,31 @@ END
 CLOSE backupFiles
 DEALLOCATE backupFiles
 RESTORE DATABASE @DB WITH RECOVERY
+
+
+--11 percent processed.
+--21 percent processed.
+--31 percent processed.
+--41 percent processed.
+--51 percent processed.
+--61 percent processed.
+--71 percent processed.
+--81 percent processed.
+--91 percent processed.
+--100 percent processed.
+--Processed 480 pages for database 'demirtest', file 'demirtest' on file 1.
+--Processed 2 pages for database 'demirtest', file 'demirtest_log' on file 1.
+--RESTORE DATABASE successfully processed 482 pages in 0.028 seconds (134.225 MB/sec).
+
+--(3 row(s) affected)
+--100 percent processed.
+--Processed 0 pages for database 'demirtest', file 'demirtest' on file 1.
+--Processed 4 pages for database 'demirtest', file 'demirtest_log' on file 1.
+--RESTORE LOG successfully processed 4 pages in 0.003 seconds (8.626 MB/sec).
+--SAMPLE_DB-TLog1.trn
+--100 percent processed.
+--Processed 0 pages for database 'demirtest', file 'demirtest' on file 1.
+--Processed 4 pages for database 'demirtest', file 'demirtest_log' on file 1.
+--RESTORE LOG successfully processed 4 pages in 0.003 seconds (10.253 MB/sec).
+--SAMPLE_DB-TLog2.trn
+
