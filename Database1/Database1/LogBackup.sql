@@ -10,7 +10,7 @@ DECLARE @day VARCHAR(2)
 DECLARE @hour VARCHAR(2)
 DECLARE @minute VARCHAR(2)
 DECLARE @second VARCHAR(2)
-
+--test
 --Time Stamp for Files
 SELECT @time = (GETDATE())
 SELECT @month  = (SELECT CONVERT(VARCHAR(2), FORMAT(DATEPART(mm,@time),'00')))
