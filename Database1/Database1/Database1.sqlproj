@@ -62,4 +62,7 @@
     <Build Include="Backup.sql" />
     <Build Include="LogBackup.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="RestoreProcedure.sql" />
+  </ItemGroup>
 </Project>
