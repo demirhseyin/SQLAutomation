@@ -10,7 +10,6 @@ DECLARE @day VARCHAR(2)
 DECLARE @hour VARCHAR(2)
 DECLARE @minute VARCHAR(2)
 DECLARE @second VARCHAR(2)
---test
 --Time Stamp for Files
 SELECT @time = (GETDATE())
 SELECT @month  = (SELECT CONVERT(VARCHAR(2), FORMAT(DATEPART(mm,@time),'00')))
@@ -29,13 +28,19 @@ WHERE name NOT IN ('master','model','msdb','tempdb','ReportServer','ReportServer
 
 OPEN db_cursor   
 FETCH NEXT FROM db_cursor INTO @name   
---Backup Starts
+--Backup Operation
 WHILE @@FETCH_STATUS = 0   
 BEGIN   
+
+	 DECLARE @RecoveryModel nvarchar(100)
+     SET @RecoveryModel = (select recovery_model_desc from sys.databases WHERE name = @name)
+     IF @RecoveryModel != 'FULL'
+      --Warm the DBA
+     PRINT 'Your Recovery Mode is Not Acceptable to Complete Log Backup Operation Please Run This Command on Your Database: ALTER DATABASE model SET RECOVERY FULL;  '
+Else
+       --Start Log Backup Operation
        SET @fileName = @path + @name +'_'+@month+'_'+@day+'_'+@hour+'_'+@minute  + '.TRN'  
-
        BACKUP LOG @name TO DISK = @fileName WITH STATS = 1,COMPRESSION,CHECKSUM,INIT
-
        FETCH NEXT FROM db_cursor INTO @name   
 END   
 --Backup End
